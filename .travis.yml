@@ -1,0 +1,11 @@
+language: ruby
+
+services:
+    - postgresql
+
+before_script:
+  - git clone git://github.com/gilt/schema-evolution-manager.git /tmp/schema-evolution-manager
+  - (cd /tmp/schema-evolution-manager && git checkout -f 0.9.29 && ruby ./configure.rb --prefix /usr/local  && sudo ./install.rb)
+
+script:
+  - ruby test.rb

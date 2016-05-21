@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# cold rebuild without dropping DB. Primarily used for testing and
+# first time set up
+cd `dirname $0`
+createdb schema_test_travis
+./dev.rb
