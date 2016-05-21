@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd `dirname $0`
+dropdb schema_test_travis || true
+createdb schema_test_travis
+./dev.rb
